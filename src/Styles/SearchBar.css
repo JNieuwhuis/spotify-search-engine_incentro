@@ -1,0 +1,25 @@
+.searchBox {
+  display: flex;
+}
+
+.inputBar {
+  display: inline-block;
+  width: 30vw;
+  border: 5px solid #117a37;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.searchButton {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #117a37;
+  color: #fff;
+  font-size: 16px;
+  border: 1px solid #117a37;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px #000;
+  letter-spacing: 1px;
+}
