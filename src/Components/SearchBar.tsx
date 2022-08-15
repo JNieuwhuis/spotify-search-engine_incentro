@@ -10,18 +10,19 @@ const SearchBar = () => {
 
   const handleSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log("input", input);
+    alert("Searching!");
   };
 
   return (
     <div className="searchBox">
-      <button className="searchButton" onClick={handleSearch}>
-        Search!
-      </button>
       <input
         className="inputBar"
         placeholder="Search Spotify..."
         onChange={handleInput}
       />
+      <button className="searchButton" onClick={handleSearch}>
+        Search!
+      </button>
     </div>
   );
 };
