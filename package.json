@@ -10,7 +10,7 @@
     "url": "git+https://github.com/JNieuwhuis/spotify-search-engine_incentro.git"
   },
   "scripts": {
-    "precommit": "yarn lint && yarn run test:pre-push",
+    "precommit": "yarn lint",
     "precommit:w": "yarn lint-staged",
     "lint:pre-push": "yarn run lint",
     "lint:pre-push:w": "yarn workspaces foreach -ivp -j ${AGENT_CPU:-2} --since run lint",
