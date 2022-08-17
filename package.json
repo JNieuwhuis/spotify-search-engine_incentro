@@ -1,21 +1,32 @@
 {
   "name": "spotify-search-engine_jnieuwhuis",
-  "version": "0.1.0",
+  "description": "Spotify Search Engine JNieuwhuis",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "author": "JNieuwhuis <j.nieuwhuis@hotmail.com> (https://github.com/JNieuwhuis)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JNieuwhuis/spotify-search-engine_incentro.git"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.9.1",
+    "@types/react": "^17.0.21",
+    "@types/react-dom": "^17.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3"
   }
 }
