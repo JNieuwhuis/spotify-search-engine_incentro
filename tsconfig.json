@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es2022"],
+    "lib": ["DOM", "ES2022"],
     "target": "es2022",
     "module": "Node16",
     "moduleResolution": "nodenext",
