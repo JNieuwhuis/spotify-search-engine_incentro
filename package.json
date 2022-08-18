@@ -10,10 +10,31 @@
     "url": "git+https://github.com/JNieuwhuis/spotify-search-engine_incentro.git"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "precommit": "yarn lint",
+    "precommit:w": "yarn lint-staged",
+    "lint:pre-push": "yarn run lint",
+    "lint:pre-push:w": "yarn workspaces foreach -ivp -j ${AGENT_CPU:-2} --since run lint",
+    "lint": "yarn run lint:js && yarn run lint:types && yarn run format:check",
+    "lint:js": "echo 'yarn eslint .'",
+    "lint:js:w": "yarn workspaces foreach -ivp -j ${AGENT_CPU:-2} --since run lint:js --quiet",
+    "lint:types": "yarn tsc --noEmit",
+    "lint:types:w": "yarn workspaces foreach -ivp -j ${AGENT_CPU:-2} --since run lint:types",
+    "format": "echo 'yarn prettier --write --loglevel error .'",
+    "format:w": "yarn workspaces foreach -ivp -j ${AGENT_CPU:-2} --since run format",
+    "format:check": "echo 'yarn prettier --check'",
+    "format:check:w": "yarn workspaces foreach -ivp -j ${AGENT_CPU:-2} --since run format:check",
     "build": "react-scripts build",
+    "clean": "echo 'no dirty secrets'",
+    "start": "react-scripts start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:pre-push": "git fetch origin master && yarn test --watchAll=false && echo 'jest --changedSince=master'",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "echo 'eslint --fix --quiet'",
+      "echo 'prettier --write --loglevel error'"
+    ]
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -28,11 +49,12 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   },
   "browserslist": {
     "production": [
@@ -45,9 +67,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "typescript": "^4.7.4"
   },
   "engines": {
     "node": "^16"
