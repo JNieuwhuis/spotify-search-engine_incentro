@@ -23,7 +23,6 @@ dist/
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
-!.yarn/versions
 
 # IDEs and editors
 .idea/
